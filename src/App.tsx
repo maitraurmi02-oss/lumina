@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { fetchDailyPainting } from "./services/artService";
+import { fetchDailyPainting, getImageUrl } from "./services/artService";
 import { extractPalette } from "./lib/colorUtils";
 import { Painting, MusicState, WallpaperSource } from "./types";
 import { FluidAura } from "./components/FluidAura";
@@ -78,7 +78,7 @@ export default function App() {
         setPainting(art);
         // Only update colors if we are in painting mode
         if (!music.isPlaying) {
-          const artColors = await extractPalette(`https://www.artic.edu/iiif/2/${art.image_id}/full/400,/0/default.jpg`);
+          const artColors = await extractPalette(getImageUrl(art.image_id, 400));
           setColors(artColors);
         }
       }
@@ -96,7 +96,7 @@ export default function App() {
       } else {
         setSource("painting");
         if (painting) {
-          const artColors = await extractPalette(`https://www.artic.edu/iiif/2/${painting.image_id}/full/400,/0/default.jpg`);
+          const artColors = await extractPalette(getImageUrl(painting.image_id, 400));
           setColors(artColors);
         }
       }

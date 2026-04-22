@@ -5,8 +5,9 @@ export interface Painting {
   image_id: string;
   date_display: string;
   medium_display: string;
-  dimensions: string;
+  dimensions?: string;
   place_of_origin?: string;
+  is_public_domain?: boolean;
 }
 
 export interface MusicState {
