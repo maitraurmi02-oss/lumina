@@ -1,0 +1,6 @@
+{
+  "name": "Atmosphere: Art & Sound",
+  "description": "A live reactive wallpaper experience combining famous masterpieces with fluid album art visualizations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["PWA", "Interactive Background", "Art API Integration"]
+}

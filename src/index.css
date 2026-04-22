@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+:root {
+  --color-bg: #0c0c0e;
+  --color-text: #e0e0e0;
+}
+
+body {
+  @apply bg-[#0c0c0e] text-[#e0e0e0] overflow-hidden;
+  font-family: var(--font-sans);
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-3xl border border-white/10;
+}
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 0%, black 80%, transparent 100%);
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
